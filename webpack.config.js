@@ -2,6 +2,7 @@ const {
     VueLoaderPlugin
 } = require('vue-loader')
 
+
 module.exports = {
     entry: './src/app/index.js',
     output: {
@@ -29,7 +30,7 @@ module.exports = {
                     "css-loader", // translates CSS into CommonJS
                     "sass-loader" // compiles Sass to CSS, using Node Sass by default
                 ]
-            }
+            },
 
         ]
     }

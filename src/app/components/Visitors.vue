@@ -1,17 +1,18 @@
 <template>
-  <div class="visitors">
+  <div class="wrapper">
     <h3 class="visitors-title">My guests</h3>
-    <div class="visitor" v-for="guest in guests" :key="guest._id">
-      <span>{{guest.name}}, {{guest.age}}</span>
-      <span>{{guest.nationality}}</span>
-      <span>{{guest.type}}</span>
+
+    <div class="visitors">
+      <div class="visitor" v-for="guest in guests" :key="guest._id">
+        <span>{{guest.name}}, {{guest.age}}</span>
+        <span>{{guest.nationality}}</span>
+        <span>{{guest.type}}</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import EventBus from "../EventBus";
-
 export default {
   data() {
     return {
@@ -25,8 +26,9 @@ export default {
       guests: []
     };
   },
-  created() {
-    this.$eventHub.$on("sent", this.getGuests());
+  mounted() {
+    this.getGuests();
+    this.$eventHub.$on("sent", this.getGuests);
   },
   beforeDestroy() {
     this.$eventHub.$off("sent");

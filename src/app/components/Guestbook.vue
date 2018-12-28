@@ -79,7 +79,8 @@ export default {
       border: none;
       border-bottom: 1px solid gray;
       padding: 5px;
-      font-family: monospace;
+
+      font-family: "Roboto Mono", monospace;
     }
     input[type="submit"] {
       width: 200px;
