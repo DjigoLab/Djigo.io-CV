@@ -119,7 +119,7 @@ html {
   font-family: "Roboto Mono", monospace;
   display: flex;
   flex-flow: column;
-  margin: 50px;
+  margin: 25px;
   padding: 15px;
   border: 1px solid gray;
   background-color: white;
@@ -129,6 +129,7 @@ html {
 
   @media (min-width: 768px) {
     padding: 30px;
+    margin: 50px;
   }
   .grid-tools {
     display: grid;
