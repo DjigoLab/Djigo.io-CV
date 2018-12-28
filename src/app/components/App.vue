@@ -120,12 +120,16 @@ html {
   display: flex;
   flex-flow: column;
   margin: 50px;
-  padding: 30px;
+  padding: 15px;
   border: 1px solid gray;
   background-color: white;
   -webkit-box-shadow: -5px 0.5px 20px 0px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: -5px 0.5px 20px 0px rgba(0, 0, 0, 0.45);
   box-shadow: -5px 0.5px 20px 0px rgba(0, 0, 0, 0.45);
+
+  @media (min-width: 768px) {
+    padding: 30px;
+  }
   .grid-tools {
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
