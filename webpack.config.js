@@ -5,6 +5,7 @@ const {
 
 module.exports = {
     entry: './src/app/index.js',
+    mode: 'production',
     output: {
         path: __dirname + '/src/public/js',
         filename: 'bundle.js'
@@ -37,6 +38,9 @@ module.exports = {
 
     ,
     plugins: [
-        new VueLoaderPlugin
+        new VueLoaderPlugin,
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        })
     ]
 }
