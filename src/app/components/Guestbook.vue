@@ -85,9 +85,13 @@ export default {
     input[type="submit"] {
       width: 200px;
       padding: 15px;
-      // border-radius: 5px;
-      align-self: center;
+      border: 0px;
+      background: transparent;
       border: 1px solid black;
+      font-family: "Roboto Mono", monospace;
+      align-self: center;
+      margin-top: 30px;
+      margin-bottom: 0px;
     }
   }
 }

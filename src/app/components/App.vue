@@ -78,7 +78,10 @@
       </P>
       <p class="contact">
         Why don't you also sign the
-        <button @click="showGuestbook = true">Guestbook?</button>
+        <button
+          class="toGuestbook"
+          @click="showGuestbook = true"
+        >Guestbook?</button>
       </p>
       <p class="contact">
         You can contact me via:
@@ -158,6 +161,16 @@ html {
   div {
     padding: 15px;
     // border-radius: 5px;
+  }
+  button {
+    border: 0px;
+    background: transparent;
+    border: 1px solid black;
+    font-family: "Roboto Mono", monospace;
+  }
+  a {
+    color: black;
+    font-weight: bold;
   }
 }
 </style>
