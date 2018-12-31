@@ -86,8 +86,11 @@
       <p class="contact">
         You can contact me via:
         <a href="mailto:djigolab@gmail.com">E-mail</a>,
-        <a href="https://www.linkedin.com/in/antonio-djigo-navarro-598797138/">Linkedin</a> or
-        <a href="https://twitter.com/Brownio_">Twitter</a> and also
+        <a
+          href="https://www.linkedin.com/in/antonio-djigo-navarro-598797138/"
+          target="_blank"
+        >Linkedin</a> or
+        <a href="https://twitter.com/Brownio_" target="_blank">Twitter</a> and also
         <a href="https://ko-fi.com/djigoio" target="_blank">gift me some caffeine</a> ☕
       </p>
     </div>
@@ -120,6 +123,9 @@ export default {
 <style lang="scss" >
 html {
   background-image: url("https://i.imgur.com/5V76jwv.jpg");
+}
+body {
+  margin: 0px;
 }
 .clickable {
   text-decoration: underline;
@@ -167,6 +173,9 @@ html {
     background: transparent;
     border: 1px solid black;
     font-family: "Roboto Mono", monospace;
+    @media (max-width: 480px) {
+      margin-top: 15px;
+    }
   }
   a {
     color: black;
