@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const app = express();
 
 
-const dbURL = 'mongodb://localhost/djigoio'
+const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
 mongoose.connect(dbURL, {
         useNewUrlParser: true
     })
