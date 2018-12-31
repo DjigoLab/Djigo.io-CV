@@ -18,6 +18,7 @@
       <select name="nationality" id="nationality" v-model="guest.nationality">
         <option value="None">Won't tell...</option>
         <option value="Spain">ESP</option>
+        <option value="UK">UK</option>
       </select>
       <input type="submit" value="Submit" @click="addGuest()">
     </form>
