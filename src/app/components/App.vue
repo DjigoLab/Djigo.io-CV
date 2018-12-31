@@ -34,8 +34,7 @@
           <p>Back-end:</p>
           <ul>
             <li>Laravel</li>
-            <li>Express</li>
-            <li>Node.js</li>
+            <li>Express.js</li>
             <li>ASP.NET MVC</li>
           </ul>
         </div>
@@ -53,6 +52,14 @@
             <li>Ionic</li>
             <li>React Native</li>
             <li>Flutter</li>
+          </ul>
+        </div>
+        <div class="tool">
+          <p>Tools:</p>
+          <ul>
+            <li>AWS</li>
+            <li>MongoDB</li>
+            <li>Git</li>
           </ul>
         </div>
         <div class="tool">
@@ -113,6 +120,8 @@ html {
 }
 .clickable {
   text-decoration: underline;
+  padding: 0px 15px;
+  margin-bottom: 0;
 }
 #wrapper {
   background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=626262&density=10&opacity=10 ");
