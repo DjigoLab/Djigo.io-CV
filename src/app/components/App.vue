@@ -85,9 +85,9 @@
       </p>
       <p class="contact">
         You can contact me via:
-        <a href>E-mail</a>,
-        <a href>Linkedn</a> or
-        <a href>Twitter</a> and also
+        <a href="mailto:djigolab@gmail.com">E-mail</a>,
+        <a href="https://www.linkedin.com/in/antonio-djigo-navarro-598797138/">Linkedin</a> or
+        <a href="https://twitter.com/Brownio_">Twitter</a> and also
         <a href="https://ko-fi.com/djigoio" target="_blank">gift me some caffeine</a> ☕
       </p>
     </div>
