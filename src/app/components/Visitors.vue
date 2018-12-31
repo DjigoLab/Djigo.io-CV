@@ -55,12 +55,10 @@ export default {
   transition: 1s ease-in-out;
   overflow: auto;
   .visitor {
-    display: flex;
-    flex-flow: column;
     border: 1px solid black;
     padding: 15px;
     text-align: center;
-    overflow: hidden;
+    overflow: auto;
     min-height: 80px;
   }
 }
