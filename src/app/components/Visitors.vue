@@ -50,10 +50,15 @@ export default {
 .visitors {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 120px);
+  grid-template-columns: 1fr;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
   grid-gap: 15px;
   transition: 1s ease-in-out;
-  overflow: auto;
   .visitor {
     border: 1px solid black;
     padding: 15px;
