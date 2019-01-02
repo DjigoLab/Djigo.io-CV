@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const app = express();
 //const dbURL = 'mongodb://localhost/djigoio'
 const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
-const server = app.listen(3000, function () {
+const server = app.listen(process.env.PORT || 3000, function () {
     console.log("listening on :3000")
 })
 const io = require('socket.io')(server)
