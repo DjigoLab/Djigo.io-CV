@@ -2,8 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose')
 const app = express();
-const dbURL = 'mongodb://localhost/djigoio'
-//const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
+//const dbURL = 'mongodb://localhost/djigoio'
+const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
 const server = app.listen(process.env.PORT, function () {
     console.log("listening on :3000")
 })
