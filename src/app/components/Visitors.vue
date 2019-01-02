@@ -27,7 +27,7 @@ export default {
         nationality: ""
       },
       guests: [],
-      socket: io(":3000")
+      socket: io(process.env.PORT)
     };
   },
   methods: {

@@ -1,16 +1,23 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose')
-const app = express();
-//const dbURL = 'mongodb://localhost/djigoio'
-const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
-const server = app.listen(process.env.PORT, function () {
-    console.log("listening on :3000")
-})
-const io = require('socket.io')(server)
+const socketIO = require('socket.io');
+const dbURL = 'mongodb://localhost/djigoio'
+//const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
+const PORT = process.env.PORT || 3000;
+
+const server = express()
+    .use(morgan('dev'))
+    .use(express.json())
+    .use("/api/users", require(__dirname + '/routes/users'))
+    .use(express.static(__dirname + '/public'))
+    .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+const io = socketIO(server);
 
 io.on('connection', function (socket) {
-    //socket.on('disconnect', function () {});
+    console.log('Client connected');
+    socket.on('disconnect', () => console.log('Client disconnected'));
     socket.on('NEW_ENTRY', function () {
         io.emit('ENTRY_ADDED')
     })
@@ -21,16 +28,3 @@ mongoose.connect(dbURL, {
     })
     .then(db => console.log('Connected!'))
     .catch(err => console.error(err))
-
-
-// Express Settings
-app.set('port', process.env.PORT);
-// Middlewares
-app.use(morgan('dev'))
-app.use(express.json());
-
-//Routes
-app.use("/api/users", require(__dirname + '/routes/users'))
-
-//Static files
-app.use(express.static(__dirname + '/public'))
