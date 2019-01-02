@@ -2,8 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose')
 const socketIO = require('socket.io');
-const dbURL = 'mongodb://localhost/djigoio'
-//const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
+//const dbURL = 'mongodb://localhost/djigoio'
+const dbURL = 'mongodb://lord:djigolab12@ds245661.mlab.com:45661/djigoio'
 const PORT = process.env.PORT || 3000;
 
 const server = express()
