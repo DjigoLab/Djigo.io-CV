@@ -36,12 +36,14 @@ export default {
         // logo: "",
         nationality: ""
       },
-      guests: []
+      guests: [],
+      socket: io(":3000")
     };
   },
+
   methods: {
     addGuest() {
-      if (this.guest.name.length > 0)
+      if (this.guest.name.length > 0) {
         fetch("/api/users/", {
           method: "POST",
           body: JSON.stringify(this.guest),
@@ -49,9 +51,14 @@ export default {
             Accept: "application/json",
             "Content-type": "application/json"
           }
-        }).then(res => this.$eventHub.$emit("sent"));
-      this.clearForm();
+        })
+          .then(this.socket.emit("NEW_ENTRY"))
+          .catch(err => console.error(err));
+
+        this.clearForm();
+      }
     },
+
     // processFile(e) {
     //   this.guest.logo = e.target.files[0];
     // },

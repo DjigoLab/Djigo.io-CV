@@ -1,9 +1,12 @@
 <template>
   <div class="wrapper">
     <h3 class="visitors-title">My guests</h3>
-
     <div class="visitors">
-      <div class="visitor" v-for="guest in guests" :key="guest._id">
+      <div
+        class="visitor animated fadeIn"
+        v-for="guest in guests.slice().reverse()"
+        :key="guest.id"
+      >
         <span>{{guest.name}}, {{guest.age}}</span>
         <span>{{guest.nationality}}</span>
         <span>{{guest.type}}</span>
@@ -23,22 +26,27 @@ export default {
         // logo: "",
         nationality: ""
       },
-      guests: []
+      guests: [],
+      socket: io(":3000")
     };
-  },
-  mounted() {
-    this.getGuests();
-    this.$eventHub.$on("sent", this.getGuests);
-  },
-  beforeDestroy() {
-    this.$eventHub.$off("sent");
   },
   methods: {
     getGuests() {
       fetch("/api/users/")
         .then(res => res.json())
-        .then(data => (this.guests = data));
+        .catch(err => console.error(err))
+        .then(data => (this.guests = data))
+        .catch(err => console.error(err));
     }
+  },
+  mounted() {
+    this.getGuests();
+    this.socket.on(
+      "ENTRY_ADDED",
+      function() {
+        this.getGuests();
+      }.bind(this)
+    );
   }
 };
 </script>
@@ -58,7 +66,6 @@ export default {
     grid-template-columns: repeat(3, 1fr);
   }
   grid-gap: 15px;
-  transition: 1s ease-in-out;
   .visitor {
     border: 1px solid black;
     padding: 15px;

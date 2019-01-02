@@ -102,6 +102,7 @@
 <script>
 import Guestbook from "./Guestbook.vue";
 import Visitors from "./Visitors.vue";
+
 export default {
   data() {
     return {
@@ -111,18 +112,13 @@ export default {
   components: {
     Guestbook,
     Visitors
-  },
-  methods: {
-    swapToGuestbook() {
-      console.log(1);
-    }
   }
 };
 </script>
 
 <style lang="scss" >
 html {
-  background-image: url("https://i.imgur.com/5V76jwv.jpg");
+  background: #d0e4f5 url("https://i.imgur.com/5V76jwv.jpg") fixed center;
 }
 body {
   margin: 0px;
@@ -133,7 +129,7 @@ body {
   margin-bottom: 0;
 }
 #wrapper {
-  background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=626262&density=10&opacity=10 ");
+  background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=626262&density=10&opacity=10");
   font-family: "Roboto Mono", monospace;
   display: flex;
   flex-flow: column;
