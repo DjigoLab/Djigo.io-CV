@@ -10,11 +10,7 @@ const server = app.listen(3000, function () {
 const io = require('socket.io')(server)
 
 io.on('connection', function (socket) {
-    console.log(socket.id);
-
-    socket.on('disconnect', function () {
-        console.log('user disconnected');
-    });
+    //socket.on('disconnect', function () {});
     socket.on('NEW_ENTRY', function () {
         io.emit('ENTRY_ADDED')
     })
@@ -28,7 +24,7 @@ mongoose.connect(dbURL, {
 
 
 // Express Settings
-
+app.set('port', process.env.PORT || 3000);
 // Middlewares
 app.use(morgan('dev'))
 app.use(express.json());
